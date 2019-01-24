@@ -1,6 +1,5 @@
-# vue-accessibility
-
-> Accessibility plugin
+# vue-accessibility-demo
+Demo for media accessibility with Cloudinary
 
 ## Build Setup
 
