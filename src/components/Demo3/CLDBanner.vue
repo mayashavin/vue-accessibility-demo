@@ -8,7 +8,7 @@
 </template>
 <script>
 export default {
-  name: 'BannerWithText',
+  name: 'CLDBanner',
   props: {
     banner: {
       type: Object,

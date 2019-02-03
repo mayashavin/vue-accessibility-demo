@@ -5,6 +5,7 @@ import TextBackgroundDemo from '@/components/Demo2/TextBackgroundDemo';
 import ImageManipulationDemo from '@/components/Demo4/ImageManipulationDemo';
 import BackgroundCLDDemo from '@/components/Demo3/BackgroundCLDDemo';
 import ElementOrderDemo from '@/components/Demo1/ElementOrderDemo';
+import Demo from '@/components/Demo/Demo';
 
 Vue.use(Router);
 
@@ -14,6 +15,11 @@ export default new Router({
       path: '/',
       name: 'Home',
       component: Home,
+    },
+    {
+      path: '/demo',
+      name: 'Demo',
+      component: Demo,
     },
     {
       path: '/demo1',

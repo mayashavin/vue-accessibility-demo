@@ -1,24 +1,76 @@
 <template>
-  <div id="app">
-    <header>
-      <span>Vue Accessibility for visual impairments</span>
-    </header>
-    <main>
-      <router-view></router-view>
-    </main>
-  </div>
+  <v-app :dark="isDarkTheme">
+    <access-ctrls
+      v-on:brightness="changeBrightness"
+      v-on:contrast="changeContrast"
+      v-on:screenMode="switchScreenMode"
+      v-on:grayscale="toogleGrayscaleMode"
+      :class="accessCtrlBg"/>      
+    <div ref="app" id="app-1">
+      <header class="white"></header>
+      <main>
+        <router-view></router-view>
+      </main>
+    </div>
+  </v-app>
 </template>
 
 <script>
+import AccessibilityControls from '@/components/AccessibilityControls/AccessibilityControls';
+import store from '@/store/store';
 
 export default {
   name: 'app',
+  components: {
+    AccessCtrls: AccessibilityControls,
+  },
+  methods: {
+    changeBrightness(percent) {
+      this.$el.style.setProperty('--brightness', percent);
+    },
+    changeContrast(percent) {
+      this.$el.style.setProperty('--contrast', percent);
+    },
+    toogleGrayscaleMode(isGrayscaleOn) {
+      this.$el.style.setProperty('--grayscale', isGrayscaleOn ? 1 : 0);
+    },
+    switchScreenMode(isDarkMode) {
+      // this.isDarkTheme = isDarkMode;
+      this.$el.style.setProperty('--invert', isDarkMode ? 1 : 0);
+    },
+  },
+  data() {
+    return {
+      isDarkTheme: false,
+      sharedState: store,
+    };
+  },
+  computed: {
+    accessCtrlBg() {
+      return {
+        black: this.isDarkTheme,
+        white: !this.isDarkTheme,
+      };
+    },
+    appRef() {
+      return this.$refs.app;
+    },
+  },
 };
 </script>
 
-<style>
+<style lang="scss">
+:root{
+  --brightness: 100%;
+  --contrast: 100%;
+  --grayscale: 0;
+  --invert: 0;
+  --fontSize: 100%;
+}
+
 body {
   margin: 0;
+  font-size: var(--fontSize);
 }
 
 #app {
@@ -26,11 +78,11 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
+  filter: contrast(var(--contrast)) brightness(var(--brightness)) #{"grayscale(var(--grayscale))"} #{"invert(var(--invert))"};
 }
 
 main {
   text-align: center;
-  margin-top: 40px;
 }
 
 header {

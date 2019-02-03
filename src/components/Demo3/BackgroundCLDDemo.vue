@@ -24,8 +24,8 @@ export default {
           publicId: 'VueJS_Amsterdam_2018/vectorstock_845035',
           width: 500,
           height: 295,
-          // effect: 'brightness_hsb:0',
-          // crop: 'fill',
+          effect: 'brightness_hsb:0',
+          crop: 'fill',
         },
         title: 'Heading 1',
         // titleColor: 'black',
@@ -39,17 +39,17 @@ export default {
       //   title: 'Heading 2',
       //   titleColor: 'white',
       //   titleFontSize: '60px',
-      // }, {
-      //   banner: {
-      //     publicId: 'VueJS_Amsterdam_2018/vectorstock_1359778',
-      //     width: 500,
-      //     height: 295,
-      //     crop: 'fill',
-      //   },
-      //   title: 'Heading 3',
-      //   titleShadow: '2px 2px #00000066',
-      //   bannerEffect: 'whiteOnBlack',
-      //   titleFontSize: '40px',
+      }, {
+        banner: {
+          publicId: 'VueJS_Amsterdam_2018/vectorstock_1359778',
+          width: 500,
+          height: 295,
+          crop: 'fill',
+        },
+        title: 'Heading 3',
+        titleShadow: '2px 2px #00000066',
+        bannerEffect: 'whiteOnBlack',
+        titleFontSize: '40px',
       // }, {
       //   banner: {
       //     publicId: 'VueJS_Amsterdam_2018/vectorstock_845035',

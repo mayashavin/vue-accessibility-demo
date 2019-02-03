@@ -46,6 +46,7 @@ export default {
   .option {
     justify-content: space-between;
     width: inherit;
+    align-items: center;
   }
 
   .btn {
