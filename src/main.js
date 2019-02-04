@@ -3,13 +3,11 @@
 import Vue from 'vue';
 import 'material-design-icons-iconfont/dist/material-design-icons.css';
 import './plugins/vuetify';
-import Vuessibility from './plugins/Vuessibilty';
 import Cloudinary from '../cloudinary_vue';
 import App from './App';
 import router from './router';
 
 Vue.config.productionTip = false;
-Vue.use(Vuessibility);
 Vue.use(Cloudinary, {
   cloudName: 'cloudinary',
 });

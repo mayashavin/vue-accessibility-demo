@@ -1,10 +1,13 @@
 <template>
   <div class="demo-container">
     <h1>Demo: Elements Order & Usage 🤓</h1>
-    <div class="d-flex toggle-wrapper">
+    <div class="toggle-wrapper">
       <h3 :class="{ inactive: cssEnabled }">CSS Disabled</h3>
       <label class="switch">
-        <input type="checkbox" v-model="cssEnabled">
+        <input type="checkbox" v-model="cssEnabled"
+role="switch"
+:data-aria-selected="cssEnabled"  
+        >
         <span class="slider round"></span>
       </label>
       <h3 :class="{ inactive: !cssEnabled }">CSS Enabled</h3>
@@ -13,8 +16,10 @@
   </div>
 </template>
 <script>
-import ElementsOrder from '@/components/Demo1/ElementsOrder';
+import ElementsOrder from '@/components/ElementOrderDemo/ElementsOrder';
 
+//  aria-label="heading"
+//  :data-aria-selected="cssEnabled"
 export default {
   name: 'ElementOrderDemo',
   components: { ElementsOrder },
@@ -41,6 +46,7 @@ export default {
   .toggle-wrapper {
     justify-content: center;
     align-items: center;
+    display: flex;
 
     .inactive {
       color: lightgray;

@@ -1,11 +1,11 @@
 <template>
-  <v-app :dark="isDarkTheme">
+  <v-app>
     <access-ctrls
-      v-on:brightness="changeBrightness"
-      v-on:contrast="changeContrast"
-      v-on:screenMode="switchScreenMode"
-      v-on:grayscale="toogleGrayscaleMode"
-      :class="accessCtrlBg"/>      
+      @brightness="changeBrightness"
+      @contrast="changeContrast"
+      @grayscale="toogleGrayscaleMode"
+      @screenMode="switchScreenMode"
+    />      
     <div ref="app" id="app-1">
       <header class="white"></header>
       <main>
@@ -35,28 +35,21 @@ export default {
       this.$el.style.setProperty('--grayscale', isGrayscaleOn ? 1 : 0);
     },
     switchScreenMode(isDarkMode) {
-      // this.isDarkTheme = isDarkMode;
       this.$el.style.setProperty('--invert', isDarkMode ? 1 : 0);
     },
   },
   data() {
     return {
-      isDarkTheme: false,
       sharedState: store,
     };
   },
   computed: {
-    accessCtrlBg() {
-      return {
-        black: this.isDarkTheme,
-        white: !this.isDarkTheme,
-      };
-    },
     appRef() {
       return this.$refs.app;
     },
   },
 };
+
 </script>
 
 <style lang="scss">
@@ -79,6 +72,11 @@ body {
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
   filter: contrast(var(--contrast)) brightness(var(--brightness)) #{"grayscale(var(--grayscale))"} #{"invert(var(--invert))"};
+
+  // Double invert for night mode to maintain image color
+  // img {
+  //   filter: #{"invert(var(--invert))"};
+  // }
 }
 
 main {
@@ -104,11 +102,11 @@ header span {
   padding-top: 16px;
 }
 
-.d-flex {
+.d--flex {
   display: flex;
 }
 
-.d-grid {
+.d--grid {
   display: grid;
 }
 

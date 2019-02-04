@@ -1,11 +1,10 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 import Home from '@/components/Home/Home';
-import TextBackgroundDemo from '@/components/Demo2/TextBackgroundDemo';
-import ImageManipulationDemo from '@/components/Demo4/ImageManipulationDemo';
-import BackgroundCLDDemo from '@/components/Demo3/BackgroundCLDDemo';
-import ElementOrderDemo from '@/components/Demo1/ElementOrderDemo';
-import Demo from '@/components/Demo/Demo';
+import TextBackgroundDemo from '@/components/TextBackgroundDemo/TextBackgroundDemo';
+import ImageManipulationDemo from '@/components/ImageManipulationDemo/ImageManipulationDemo';
+import ElementOrderDemo from '@/components/ElementOrderDemo/ElementOrderDemo';
+import Demo from '@/components/MainDemo/MainDemo';
 
 Vue.use(Router);
 
@@ -33,11 +32,6 @@ export default new Router({
     },
     {
       path: '/demo3',
-      name: 'BackgroundCLDDemo',
-      component: BackgroundCLDDemo,
-    },
-    {
-      path: '/demo4',
       name: 'ImageManipulation',
       component: ImageManipulationDemo,
     },

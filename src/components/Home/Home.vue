@@ -1,20 +1,20 @@
 <template>
   <div class="home">
-    <div class="option d-flex">
+    <div class="option d--flex">
+      <h3>👑 Demo: Accessibility</h3>
+      <router-link tag="button" class="btn" to="demo">Show me</router-link>
+    </div>
+    <div class="option d--flex">
       <h3>🤓 Demo: Element Order & Usage</h3>
-      <button class="btn" @click="goTo('demo1')" to="/demo1">Show me</button>
+      <router-link tag="button" class="btn" to="demo1">Show me</router-link>
     </div>
-    <div class="option d-flex">
+    <div class="option d--flex">
       <h3>👩🏻‍💻 Demo: Text ➕ Background (CSS Filter)</h3>
-      <button class="btn" @click="goTo('demo2')">Show me</button>
+      <router-link tag="button" class="btn" to="demo2">Show me</router-link>
     </div>
-    <div class="option d-flex">
-      <h3>👑 Demo: Text ➕ Background (CLDImage)</h3>
-      <button class="btn" @click="goTo('demo3')">Show me</button>
-    </div>
-    <div class="option d-flex">
+    <div class="option d--flex">
       <h3>🎯 Demo: Image Manipulation (Color blind)</h3>
-      <button class="btn" @click="goTo('demo4')">Show me</button>
+      <router-link tag="button" class="btn" to="demo3">Show me</router-link>
     </div>
   </div>
 </template>
@@ -38,7 +38,7 @@ export default {
     flex-direction: column;
     width: 550px;
     margin: auto;
-    padding: 1rem;
+    padding: 1rem 0;
     border: 1px solid #0a3464;
     border-radius: 5px;
   }
@@ -46,6 +46,7 @@ export default {
   .option {
     justify-content: space-between;
     width: inherit;
+    padding: 0 1rem;
     align-items: center;
   }
 

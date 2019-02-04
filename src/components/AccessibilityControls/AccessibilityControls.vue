@@ -5,7 +5,7 @@
       <v-icon right medium>{{accessBtn}}</v-icon>
     </v-btn>
     <transition name="component-fade" mode="out-in">
-      <div class="section-container pa1 d-grid" v-show="this.openAccessControlSection">
+      <div class="section-container pa1 d--grid" v-show="this.openAccessControlSection">
         <v-slider
           :label="sharedState.nightMode ? 'Darkness' : 'Brightness'"
           v-model="sharedState.brightness"

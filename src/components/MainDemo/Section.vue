@@ -1,6 +1,15 @@
 <template>
   <div class="content-wrapper ma-3">
-    <ImageWrapper :img="thumbnail" class="align-self-center" v-if="thumbnail"/>
+    <!-- normal way of render img -->
+    <!-- <img v-if="thumbnail && thumbnail.src"
+      :width="width"
+      :height="height"
+      class="align-self-center"
+      :src="thumbnail.src"/> -->
+      <!-- @error="getImagePlaceholder"/> -->
+      <!-- alt="thumbnail.alt" -->
+    <!-- new way -->
+    <image-wrapper :img="thumbnail" class="align-self-center" v-if="thumbnail"/>
     <div class="flex text-sm-justify">
       <h2 class="deep-orange--text text--darken-4" v-text="title"/>
       <h3 class="subtitle" v-text="subtitle"/>
@@ -20,7 +29,7 @@
   </div>
 </template>
 <script>
-import ImageWrapper from '@/components/Demo/ImageWrapper';
+import ImageWrapper from '@/components/MainDemo/ImageWrapper';
 import store from '@/store/store';
 
 export default {
@@ -36,6 +45,19 @@ export default {
       sharedState: store,
     };
   },
+  computed: {
+    width() {
+      return this.thumbnail.width || '';
+    },
+    height() {
+      return this.thumbnail.height || '';
+    },
+  },
+  // methods: {
+  //   getImagePlaceholder() {
+
+  //   }
+  // },
 };
 </script>
 <style lang="scss" scoped>

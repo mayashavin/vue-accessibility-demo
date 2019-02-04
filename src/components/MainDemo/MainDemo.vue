@@ -1,15 +1,15 @@
 <template>
-  <div class="demo-container d-grid">
-    <Banner v-bind="demoBanner"/>
-    <List :list="demoSections">
+  <div class="demo-container d--grid">
+    <banner v-bind="demoBanner"/>
+    <list :list="demoSections">
       <demo-section slot-scope="value" v-bind="value"/>
-    </List>
+    </list>
   </div>    
 </template>
 <script>
-import List from '@/components/Demo/List';
-import CLDBanner from '@/components/Demo/CLDBanner';
-import DemoSection from '@/components/Demo/Section';
+import List from '@/components/MainDemo/List';
+import CLDBanner from '@/components/MainDemo/CLDBanner';
+import DemoSection from '@/components/MainDemo/Section';
 
 export default {
   name: 'Demo',
@@ -23,6 +23,7 @@ export default {
       demoBanner: {
         banner: {
           publicId: 'VueJS_Amsterdam_2018/how-to-eat-more-fruits-and-veg',
+          src: 'https://cloudinary-res.cloudinary.com/image/upload/v1548245521/VueJS_Amsterdam_2018/how-to-eat-more-fruits-and-veg.jpg',
           width: 600,
           height: 300,
           alt: 'How to eat more fruits and veg',
@@ -38,6 +39,7 @@ export default {
       demoSections: [{
         thumbnail: {
           publicId: 'VueJS_Amsterdam_2018/20-12-2D-pie',
+          // src: 'https://cloudinary-res.cloudinary.com/image/upload/v1548245521/VueJS_Amsterdam_2018/20-12-2D-pie.png',
           alt: 'Pie chart',
           crop: 'fill',
           gravity: 'center',
@@ -49,6 +51,7 @@ export default {
       }, {
         thumbnail: {
           publicId: 'VueJS_Amsterdam_2018/Apple_Single',
+          // src: 'https://cloudinary-res.cloudinary.com/image/upload/v1548245521/VueJS_Amsterdam_2018/Apple_Single.png',
           alt: 'Apple of my eye',
           crop: 'fill',
           gravity: 'auto',

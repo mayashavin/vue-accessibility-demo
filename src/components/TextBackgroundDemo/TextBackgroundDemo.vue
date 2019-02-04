@@ -12,7 +12,7 @@
   </div>
 </template>
 <script>
-import BannerWithText from '@/components/Demo2/BannerWithText';
+import BannerWithText from '@/components/BannerWithText/BannerWithText';
 
 export default {
   components: { Banner: BannerWithText },
@@ -24,20 +24,20 @@ export default {
         title: 'Heading 1',
         titleColor: 'black',
         bannerBrightness: '100%',
-      // }, {
-      //   banner: 'https://cloudinary-res.cloudinary.com/image/upload/w_500,h_295/v1547740693/VueJS_Amsterdam_2018/how-to-eat-more-fruits-and-veg.jpg',
-      //   title: 'Heading 2',
-      //   titleFontSize: '60px',
-      // }, {
-      //   banner: 'https://cloudinary-res.cloudinary.com/image/upload/w_500,h_295,c_fill/v1547735371/VueJS_Amsterdam_2018/vectorstock_1359778.jpg',
-      //   title: 'Heading 3',
-      //   titleShadow: '2px 2px #00000066',
-      //   titleFontSize: '40px',
-      // }, {
-      //   banner: 'https://cloudinary-res.cloudinary.com/image/upload/w_500,h_295,c_fill/v1547735375/VueJS_Amsterdam_2018/vectorstock_845035.jpg',
-      //   title: 'Heading 4',
-      //   bannerBrightness: '70%',
-      //   titleShadow: '1px 2px #00000040',
+      }, {
+        banner: 'https://cloudinary-res.cloudinary.com/image/upload/w_500,h_295/v1547740693/VueJS_Amsterdam_2018/how-to-eat-more-fruits-and-veg.jpg',
+        title: 'Heading 2',
+        titleFontSize: '60px',
+      }, {
+        banner: 'https://cloudinary-res.cloudinary.com/image/upload/w_500,h_295,c_fill/v1547735371/VueJS_Amsterdam_2018/vectorstock_1359778.jpg',
+        title: 'Heading 3',
+        titleShadow: '2px 2px #00000066',
+        titleFontSize: '40px',
+      }, {
+        banner: 'https://cloudinary-res.cloudinary.com/image/upload/w_500,h_295,c_fill/v1547735375/VueJS_Amsterdam_2018/vectorstock_845035.jpg',
+        title: 'Heading 4',
+        bannerBrightness: '70%',
+        titleShadow: '1px 2px #00000040',
       }],
     };
   },

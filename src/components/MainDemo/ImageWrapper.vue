@@ -11,6 +11,8 @@ export default {
       type: Object,
       required: true,
     },
+    colorBlind: Boolean,
+    nightMode: Boolean,
   },
   data() {
     return {
@@ -24,13 +26,15 @@ export default {
         transformation: this.img.transformation ? [...this.img.transformation] : [],
       };
 
-      if (this.sharedState.colorBlind) {
+      if (this.colorBlind) {
+      // if (this.sharedState.colorBlind) {
         transformed.transformation.push({
           effect: 'assist_colorblind',
         });
       }
 
-      if (this.sharedState.nightMode) {
+      if (this.nightMode) {
+      // if (this.sharedState.nightMode) {
         transformed.transformation.push({
           effect: 'negate',
         });
