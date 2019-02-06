@@ -1,11 +1,11 @@
 <template>
   <v-app>
-    <access-ctrls
+    <!-- <access-ctrls
       @brightness="changeBrightness"
       @contrast="changeContrast"
       @grayscale="toogleGrayscaleMode"
       @screenMode="switchScreenMode"
-    />      
+    />       -->
     <div ref="app" id="app-1">
       <header class="white"></header>
       <main>
