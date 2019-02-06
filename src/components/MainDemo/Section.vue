@@ -9,7 +9,13 @@
       <!-- @error="getImagePlaceholder"/> -->
       <!-- alt="thumbnail.alt" -->
     <!-- new way -->
-    <image-wrapper :img="thumbnail" class="align-self-center" v-if="thumbnail"/>
+    <image-wrapper
+      :img="thumbnail"
+      class="align-self-center"
+      v-if="thumbnail"
+      :color-blind="sharedState.colorBlind"
+      :night-mode="sharedState.nightMode"
+    />
     <div class="flex text-sm-justify">
       <h2 class="deep-orange--text text--darken-4" v-text="title"/>
       <h3 class="subtitle" v-text="subtitle"/>
@@ -45,18 +51,13 @@ export default {
       sharedState: store,
     };
   },
-  computed: {
-    width() {
-      return this.thumbnail.width || '';
-    },
-    height() {
-      return this.thumbnail.height || '';
-    },
-  },
-  // methods: {
-  //   getImagePlaceholder() {
-
-  //   }
+  // computed: {
+  //   width() {
+  //     return this.thumbnail.width || '';
+  //   },
+  //   height() {
+  //     return this.thumbnail.height || '';
+  //   },
   // },
 };
 </script>

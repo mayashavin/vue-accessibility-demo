@@ -23,7 +23,7 @@ export default {
       demoBanner: {
         banner: {
           publicId: 'VueJS_Amsterdam_2018/how-to-eat-more-fruits-and-veg',
-          src: 'https://cloudinary-res.cloudinary.com/image/upload/v1548245521/VueJS_Amsterdam_2018/how-to-eat-more-fruits-and-veg.jpg',
+          // src: 'https://cloudinary-res.cloudinary.com/image/upload/v1548245521/VueJS_Amsterdam_2018/how-to-eat-more-fruits-and-veg.jpg',
           width: 600,
           height: 300,
           alt: 'How to eat more fruits and veg',

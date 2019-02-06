@@ -73,7 +73,7 @@ body {
   color: #2c3e50;
   filter: contrast(var(--contrast)) brightness(var(--brightness)) #{"grayscale(var(--grayscale))"} #{"invert(var(--invert))"};
 
-  // Double invert for night mode to maintain image color
+  // Double invert for night mode to maintain image color - will override or be overriden by other CSS located on img
   // img {
   //   filter: #{"invert(var(--invert))"};
   // }
