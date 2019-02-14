@@ -1,5 +1,50 @@
 # vue-accessibility-demo
-Demo for media accessibility with Cloudinary
+Demo for Vue plugin for m16y - media accessibility for visually impaired user support.
+
+It will inject a small widget with basic settings to for helping visually impaired user, including:
+1. Low visions (contrast sensitivy, brightness sensitivity, etc)
+2. Color blindness (texture support)
+
+## Functionalities
+[!screenshot of plugin UI](https://res.cloudinary.com/mayashavin/image/upload/v1550135241/Screen_Shot_2019-02-14_at_10.05.40.png)
+
+### Brightness control
+Allow user to change the brightness of the whole app.
+Default: `100%`
+
+# Contrast control
+Allow user to change the contrsat of the whole app.
+Default: `100%`
+
+### Dark mode (Night mode)
+Allow user to switch the app to dark theme, which is easier to read.
+
+### Color blind mode
+* Allow user to enable color blind mode for images throughout the app. It will add texture to differentiate similar colors (red-green).
+
+* Currently only works when image is rendered using `image-wrapper` component.
+
+### Grayscale mode
+Allow user to switch the app to grayscale color theme.
+
+## Technologies used
+[Vue](https://vuejs.com)
+
+UI Components currently using [Vuetify](https://vuetifyjs.com) 
+[UI Library](https://vuetifyjs.com/apple-touch-icon-180x180.png)
+
+Image manipulation support for color blind and night mode using [Cloudinary Vue SDK - Beta](https://cloudinary.com)
+[Image manipulation](https://cloudinary-res.cloudinary.com/image/upload/v1538583988/cloudinary_logo_for_white_bg.svg)
+
+And of course a bunch of other automation tools and JavaScript, CSS 👩‍💻
+
+## Version
+0.0.1
+
+#####_Coming soon_
+- Auto modify all image tags when plugin is enabled.
+- Warm lighting mode
+
 
 ## Build Setup
 
