@@ -32,7 +32,7 @@ Allow user to switch the app to grayscale color theme.
 
 UI Components currently using [Vuetify](https://vuetifyjs.com) 
 
-![UI Library](https://res.cloudinary.com/mayashavin/image/upload/w_200/v1550136562/vuetify_icon.png)
+![UI Library](https://res.cloudinary.com/mayashavin/image/upload/w_100/v1550136562/vuetify_icon.png)
 
 Image manipulation support for color blind and night mode using [Cloudinary Vue SDK - Beta](https://cloudinary.com)
 
