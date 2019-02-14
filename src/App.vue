@@ -49,9 +49,6 @@
               </v-btn>
             </div>
           </div>
-          <list :list="demoSections">
-            <demo-section slot-scope="value" v-bind="value"/>
-          </list>
         </div>
       </main>
     </div>
