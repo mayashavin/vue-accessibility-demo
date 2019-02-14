@@ -34,9 +34,6 @@
               </v-btn>
             </div>
           </div>
-          <list :list="demoSections">
-            <demo-section slot-scope="value" v-bind="value"/>
-          </list>
         </div>
       </main>
     </div>
@@ -71,7 +68,7 @@ export default {
   },
   computed: {
     fontColor() {
-      return this.$m16y.data.nightMode ? 'black' : 'white';
+      return this.$m16y.nightMode ? 'black' : 'white';
     },
   },
   mounted() {

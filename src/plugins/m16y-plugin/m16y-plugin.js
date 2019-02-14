@@ -20,11 +20,11 @@ const defaults = {
       document.body.style.setProperty('--grayscale', isGrayscaleOn ? 1 : 0);
     },
     switchNightMode(isDarkMode) {
-      this.data.nightMode = isDarkMode;
+      this.nightMode = isDarkMode;
       document.body.style.setProperty('--invert', isDarkMode ? 1 : 0);
     },
     supportColorBlind(isColorBlind) {
-      this.data.colorBlind = isColorBlind;
+      this.colorBlind = isColorBlind;
     },
   },
 }
@@ -36,7 +36,7 @@ const M16yPlugin = {
 
     const root = new Vue({
       data: {
-        ...defaults,
+        ...defaults.data,
       },
       render: createElement => createElement(AccessibilityControls),
     });

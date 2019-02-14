@@ -37,13 +37,13 @@ export default {
         });
       }
 
-      if (this.$m16y.data.colorBlind) {
+      if (this.$m16y.colorBlind) {
         transformed.transformation.push({
           effect: 'assist_colorblind',
         });
       }
 
-      if (this.$m16y.data.nightMode) {
+      if (this.$m16y.nightMode) {
         transformed.transformation.push({
           effect: 'negate',
         });

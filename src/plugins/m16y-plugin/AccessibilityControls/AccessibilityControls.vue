@@ -51,11 +51,11 @@ export default {
   data() {
     return {
       openAccessControlSection: false,
-      colorBlind: this.$m16y.data.colorBlind,
-      nightMode: this.$m16y.data.nightMode,
-      grayscale: this.$m16y.data.grayscale,
-      brightness: this.$m16y.data.brightness,
-      contrast: this.$m16y.data.contrast,
+      colorBlind: this.$m16y.colorBlind,
+      nightMode: this.$m16y.nightMode,
+      grayscale: this.$m16y.grayscale,
+      brightness: this.$m16y.brightness,
+      contrast: this.$m16y.contrast,
     };
   },
   mounted() {},
