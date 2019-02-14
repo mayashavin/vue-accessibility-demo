@@ -6,7 +6,7 @@ It will inject a small widget with basic settings to for helping visually impair
 2. Color blindness (texture support)
 
 ## Functionalities
-![screenshot of plugin UI](https://res.cloudinary.com/mayashavin/image/upload/w_100/v1550135241/Screen_Shot_2019-02-14_at_10.05.40.png)
+![screenshot of plugin UI](https://res.cloudinary.com/mayashavin/image/upload/w_250/v1550135241/Screen_Shot_2019-02-14_at_10.05.40.png)
 
 ### Brightness control
 Allow user to change the brightness of the whole app.
@@ -34,7 +34,7 @@ UI Components currently using [Vuetify](https://vuetifyjs.com)
 ![UI Library](https://vuetifyjs.com/apple-touch-icon-180x180.png)
 
 Image manipulation support for color blind and night mode using [Cloudinary Vue SDK - Beta](https://cloudinary.com)
-![Image manipulation](https://cloudinary-res.cloudinary.com/image/upload/v1538583988/cloudinary_logo_for_white_bg.svg)
+![Image manipulation](https://cloudinary-res.cloudinary.com/image/upload/w_200/v1538583988/cloudinary_logo_for_white_bg.svg)
 
 And of course a bunch of other automation tools and JavaScript, CSS 👩‍💻
 
