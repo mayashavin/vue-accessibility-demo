@@ -69,6 +69,8 @@ And it will just work! 👍
 
 `optimizedBlackText: boolean` - whether should optimize the image brightness for using as background of black text.
 
+Other transformation effects which follow [Cloudinary standards](https://cloudinary.com/documentation/image_transformations)
+
 ## Technologies used
 [Vue](https://vuejs.com)
 
