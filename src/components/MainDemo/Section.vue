@@ -29,11 +29,9 @@
   </div>
 </template>
 <script>
-import ImageWrapper from '@/components/MainDemo/ImageWrapper';
 import store from '@/store/store';
 
 export default {
-  components: { ImageWrapper },
   name: 'DemoSection',
   props: {
     thumbnail: Object,

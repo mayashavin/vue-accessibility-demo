@@ -2,8 +2,6 @@
     <CLDImage v-bind="tranformedImg"/>
 </template>
 <script>
-import store from '@/store/store';
-
 export default {
   name: 'ImageWrapper',
   props: {
@@ -11,13 +9,14 @@ export default {
       type: Object,
       required: true,
     },
-    colorBlind: Boolean,
-    nightMode: Boolean,
-  },
-  data() {
-    return {
-      sharedState: store,
-    };
+    optimizedWhiteText: {
+      type: Boolean,
+      default: false,
+    },
+    optimizedBlackText: {
+      type: Boolean,
+      default: false,
+    },
   },
   computed: {
     tranformedImg() {
@@ -26,24 +25,31 @@ export default {
         transformation: this.img.transformation ? [...this.img.transformation] : [],
       };
 
-      if (this.colorBlind) {
-      // if (this.sharedState.colorBlind) {
+      if (this.optimizedWhiteText) {
+        transformed.transformation.push({
+          effect: 'brightness_hsb:-50',
+        });
+      }
+
+      if (this.optimizedBlackText) {
+        transformed.transformation.push({
+          effect: 'brightness_hsb:30',
+        });
+      }
+
+      if (this.$m16y.data.colorBlind) {
         transformed.transformation.push({
           effect: 'assist_colorblind',
         });
       }
 
-      if (this.nightMode) {
-      // if (this.sharedState.nightMode) {
+      if (this.$m16y.data.nightMode) {
         transformed.transformation.push({
           effect: 'negate',
         });
       }
-
       return transformed;
     },
   },
 };
 </script>
-<style lang="scss" scoped>
-</style>

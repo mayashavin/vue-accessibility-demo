@@ -7,34 +7,34 @@
     <transition name="component-fade" mode="out-in">
       <div class="section-container pa1 d--grid" v-show="this.openAccessControlSection">
         <v-slider
-          :label="sharedState.nightMode ? 'Darkness' : 'Brightness'"
-          v-model="sharedState.brightness"
+          :label="nightMode ? 'Darkness' : 'Brightness'"
+          v-model="brightness"
           max="200"
           @change="modifyBrightness"
         />
         <v-slider
           label="Contrast  "
           @change="modifyContrast"
-          v-model="sharedState.contrast"
+          v-model="contrast"
           max="200"
         />
         <v-switch
           label="Dark Mode"
           @change="switchScreenMode"
           color="primary"
-          v-model="sharedState.nightMode"
+          v-model="nightMode"
         />
         <v-switch
           label="Color Blind Mode"
           @change="supportColorblind"
           color="primary"
-          v-model="sharedState.colorBlind"
+          v-model="colorBlind"
         />
         <v-switch
           label="Grayscale Mode"
           @change="supportGrayscale"
           color="primary"
-          v-model="sharedState.grayscale"
+          v-model="grayscale"
         />
         <v-btn @click="reset" dark color="teal darken-1" class="justify-self-center">
           Reset
@@ -45,15 +45,17 @@
   </div>  
 </template>
 <script>
-import store from '@/store/store';
-
 export default {
   name: 'AccessibilityControls',
   props: {},
   data() {
     return {
       openAccessControlSection: false,
-      sharedState: store,
+      colorBlind: this.$m16y.data.colorBlind,
+      nightMode: this.$m16y.data.nightMode,
+      grayscale: this.$m16y.data.grayscale,
+      brightness: this.$m16y.data.brightness,
+      contrast: this.$m16y.data.contrast,
     };
   },
   mounted() {},
@@ -62,26 +64,26 @@ export default {
       this.openAccessControlSection = !this.openAccessControlSection;
     },
     modifyBrightness() {
-      this.$emit('brightness', `${this.sharedState.brightness}%`);
+      this.$m16y.$emit('brightness', `${this.brightness}%`);
     },
     modifyContrast() {
-      this.$emit('contrast', `${this.sharedState.contrast}%`);
+      this.$m16y.$emit('contrast', `${this.contrast}%`);
     },
     supportColorblind() {
-      this.$emit('colorBlind', this.sharedState.colorBlind);
+      this.$m16y.$emit('colorBlind', this.colorBlind);
     },
     switchScreenMode() {
-      this.$emit('screenMode', this.sharedState.nightMode);
+      this.$m16y.$emit('nightMode', this.nightMode);
     },
     supportGrayscale() {
-      this.$emit('grayscale', this.sharedState.grayscale);
+      this.$m16y.$emit('grayscale', this.grayscale);
     },
     reset() {
-      this.sharedState.brightness = 100;
-      this.sharedState.contrast = 100;
-      this.sharedState.colorBlind = false;
-      this.sharedState.nightMode = false;
-      this.sharedState.grayscale = false;
+      this.brightness = 100;
+      this.contrast = 100;
+      this.colorBlind = false;
+      this.nightMode = false;
+      this.grayscale = false;
       this.modifyBrightness();
       this.modifyContrast();
       this.supportColorblind();
@@ -99,6 +101,24 @@ export default {
   },
 };
 </script>
+<style lang="scss">
+  :root{
+    --brightness: 100%;
+    --contrast: 100%;
+    --grayscale: 0;
+    --invert: 0;
+    --fontSize: 100%;
+  }
+
+  .accessibility--enabled {
+    filter: contrast(var(--contrast)) brightness(var(--brightness)) #{"grayscale(var(--grayscale))"} #{"invert(var(--invert))"};
+
+    // Double invert for night mode to maintain image color
+    // img {
+    //   filter: #{"invert(var(--invert))"};
+    // }
+  }
+</style>
 <style scoped lang="scss">
   .access-ctrls-wrapper{
     display: grid;
@@ -106,6 +126,7 @@ export default {
     position: absolute;
     right: 0;
     z-index: 2;
+    top: 0;
     background: white;
   }
 
@@ -124,5 +145,6 @@ export default {
     opacity: 0;
   }
 </style>
+
 
 

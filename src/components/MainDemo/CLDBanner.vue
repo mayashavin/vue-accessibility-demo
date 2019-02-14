@@ -1,28 +1,22 @@
 <template>
   <div class="banner--container">
-    <img v-if="banner && banner.src"
+    <!-- <img v-if="banner && banner.src"
       :width="banner.width"
       :height="banner.height"
       class="align-self-center banner--img"
       :src="banner.src"
-    />
-    <!-- <image-wrapper :img="transformedBanner"
+    /> -->
+    <image-wrapper :img="transformedBanner"
       class="section-banner"
-      :color-blind="sharedState.colorBlind"
-      :night-mode="sharedState.nightMode"
-      ref="sectionBanner"/> -->
+      ref="sectionBanner"/>
     <h1 class="banner--title" v-text="title.text" ref="sectionTitle"></h1>
   </div>
 </template>
 <script>
 import store from '@/store/store';
-import ImageWrapper from './ImageWrapper';
 
 export default {
   name: 'CLDBanner',
-  components: {
-    ImageWrapper,
-  },
   props: {
     banner: {
       type: Object,
