@@ -86,7 +86,7 @@ export default {
   },
   computed: {
     fontColor() {
-      return this.$m16y.data.nightMode ? 'black' : 'white';
+      return this.$m16y.nightMode ? 'black' : 'white';
     },
   },
   mounted() {
