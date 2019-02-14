@@ -34,7 +34,7 @@ UI Components currently using [Vuetify](https://vuetifyjs.com)
 ![UI Library](https://vuetifyjs.com/apple-touch-icon-180x180.png)
 
 Image manipulation support for color blind and night mode using [Cloudinary Vue SDK - Beta](https://cloudinary.com)
-![Image manipulation](https://cloudinary-res.cloudinary.com/image/upload/w_200/v1538583988/cloudinary_logo_for_white_bg.svg)
+![Image manipulation](https://cloudinary-res.cloudinary.com/image/upload/w_100/v1538583988/cloudinary_logo_for_white_bg.png)
 
 And of course a bunch of other automation tools and JavaScript, CSS 👩‍💻
 
