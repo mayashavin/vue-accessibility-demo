@@ -49,7 +49,7 @@ And of course a bunch of other automation tools and JavaScript, CSS 👩‍💻
 ## Version
 0.0.1
 
-#####_Coming soon_
+**_Coming soon_**
 - Auto modify all image tags when plugin is enabled.
 - Warm lighting mode
 
