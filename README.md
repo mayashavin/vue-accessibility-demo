@@ -6,7 +6,7 @@ It will inject a small widget with basic settings to for helping visually impair
 2. Color blindness (texture support)
 
 ## Functionalities
-![screenshot of plugin UI](https://res.cloudinary.com/mayashavin/image/upload/v1550135241/Screen_Shot_2019-02-14_at_10.05.40.png)
+![screenshot of plugin UI](https://res.cloudinary.com/mayashavin/image/upload/w_100/v1550135241/Screen_Shot_2019-02-14_at_10.05.40.png)
 
 ### Brightness control
 Allow user to change the brightness of the whole app.
