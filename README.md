@@ -10,19 +10,25 @@ It will inject a small widget with basic settings to for helping visually impair
 
 ### Brightness control
 Allow user to change the brightness of the whole app.
+
 Default: `100%`
 
 # Contrast control
 Allow user to change the contrsat of the whole app.
+
 Default: `100%`
 
 ### Dark mode (Night mode)
 Allow user to switch the app to dark theme, which is easier to read.
 
+Default: `false`
+
 ### Color blind mode
 * Allow user to enable color blind mode for images throughout the app. It will add texture to differentiate similar colors (red-green).
 
 * Currently only works when image is rendered using `image-wrapper` component.
+
+Default: `false`
 
 ### Grayscale mode
 Allow user to switch the app to grayscale color theme.
