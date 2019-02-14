@@ -5,12 +5,6 @@
       <main>
         <div class="demo-container d--grid">
           <div class="banner--container">
-            <!-- <img v-if="banner && banner.src"
-              :width="banner.width"
-              :height="banner.height"
-              class="align-self-center banner--img"
-              :src="banner.src"
-            /> -->
             <image-wrapper 
               class="section-banner"
               :img="banner"
@@ -22,15 +16,6 @@
               ref="sectionTitle"></h1>
           </div>
           <div class="content-wrapper ma-3">
-            <!-- normal way of render img -->
-            <!-- <img v-if="articleThumbnail && articleThumbnail.src"
-              :width="width"
-              :height="height"
-              class="align-self-center"
-              :src="articleThumbnail.src"/> -->
-              <!-- @error="getImagePlaceholder"/> -->
-              <!-- alt="articleThumbnail.alt" -->
-            <!-- new way -->
             <image-wrapper :img="articleThumbnail" class="align-self-center" v-if="articleThumbnail"/>
             <div class="flex text-sm-justify">
               <h2 class="deep-orange--text text--darken-4" v-text="title"/>
