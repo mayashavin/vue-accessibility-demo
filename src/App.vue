@@ -115,26 +115,6 @@ main {
   text-align: center;
 }
 
-.banner--container {
-  display: flex;
-  position: relative;
-  align-items: center;
-  justify-content: center;
-
-  .banner--img {
-    filter: brightness(var(--bannerBrightness)); // #{"invert(var(--invert))"}
-  }
-
-  .banner--title {
-      position: absolute;
-      margin: auto;
-      color: var(--title-fontColor);
-      font-size: var(--title-fontSize);
-      z-index: 1;
-      text-shadow: var(--title-textShadow);
-  }
-}
-
 header {
   margin: 0;
   height: 56px;
@@ -170,3 +150,26 @@ header {
   grid-gap: 1rem;
 }
 </style>
+
+<style scoped lang="scss">
+.banner--container {
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+
+  .banner--img {
+    filter: brightness(var(--bannerBrightness)); // #{"invert(var(--invert))"}
+  }
+
+  .banner--title {
+      position: absolute;
+      margin: auto;
+      color: var(--title-fontColor);
+      font-size: var(--title-fontSize);
+      z-index: 1;
+      text-shadow: var(--title-textShadow);
+  }
+}
+</style>
+
