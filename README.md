@@ -31,7 +31,8 @@ Allow user to switch the app to grayscale color theme.
 [Vue](https://vuejs.com)
 
 UI Components currently using [Vuetify](https://vuetifyjs.com) 
-![UI Library](https://vuetifyjs.com/apple-touch-icon-180x180.png)
+
+![UI Library](https://res.cloudinary.com/mayashavin/image/upload/w_200/v1550136562/vuetify_icon.png)
 
 Image manipulation support for color blind and night mode using [Cloudinary Vue SDK - Beta](https://cloudinary.com)
 
