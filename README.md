@@ -54,12 +54,19 @@ Vue.use(M16yPlugin);
 And it will just work! 👍
 
 ### Use `image-wrapper`
+
 `image-wrapper` receives the following basic props:
+
 `publicId: string` - the image unique Id using Cloudinary
+
 `width: number` - width of the image
+
 `height: number` - height of the image
+
 `alt: string`- alt text of the image
+
 `optimizedWhiteText: boolean` - whether should optimize the image brightness for using as background of white text.
+
 `optimizedBlackText: boolean` - whether should optimize the image brightness for using as background of black text.
 
 ## Technologies used
