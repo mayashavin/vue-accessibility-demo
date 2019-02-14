@@ -74,7 +74,7 @@ export default {
   },
   computed: {
     fontColor() {
-      return this.$m16y.data.nightMode ? 'black' : 'white';
+      return this.$m16y.nightMode ? 'black' : 'white';
     },
   },
   mounted() {
@@ -122,7 +122,7 @@ main {
   justify-content: center;
 
   .banner--img {
-    filter: brightness(var(--bannerBrightness)) #{"invert(var(--invert))"};
+    filter: brightness(var(--bannerBrightness)); // #{"invert(var(--invert))"}
   }
 
   .banner--title {

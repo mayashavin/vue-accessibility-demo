@@ -2,7 +2,6 @@ import AccessibilityControls from '@/plugins/m16y-plugin/AccessibilityControls/A
 import ImageWrapper from '@/plugins/m16y-plugin/AccessibilityControls/ImageWrapper';
 
 /* eslint-disable*/
-
 const defaults = {
   data: {
     colorBlind: false,
@@ -20,11 +19,11 @@ const defaults = {
       document.body.style.setProperty('--grayscale', isGrayscaleOn ? 1 : 0);
     },
     switchNightMode(isDarkMode) {
-      this.data.nightMode = isDarkMode;
+      this.nightMode = isDarkMode;
       document.body.style.setProperty('--invert', isDarkMode ? 1 : 0);
     },
     supportColorBlind(isColorBlind) {
-      this.data.colorBlind = isColorBlind;
+      this.colorBlind = isColorBlind;
     },
   },
 }
@@ -36,7 +35,7 @@ const M16yPlugin = {
 
     const root = new Vue({
       data: {
-        ...defaults,
+        ...defaults.data,
       },
       render: createElement => createElement(AccessibilityControls),
     });

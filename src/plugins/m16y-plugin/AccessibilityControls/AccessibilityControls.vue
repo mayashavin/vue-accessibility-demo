@@ -51,11 +51,11 @@ export default {
   data() {
     return {
       openAccessControlSection: false,
-      colorBlind: this.$m16y.data.colorBlind,
-      nightMode: this.$m16y.data.nightMode,
-      grayscale: this.$m16y.data.grayscale,
-      brightness: this.$m16y.data.brightness,
-      contrast: this.$m16y.data.contrast,
+      colorBlind: this.$m16y.colorBlind,
+      nightMode: this.$m16y.nightMode,
+      grayscale: this.$m16y.grayscale,
+      brightness: this.$m16y.brightness,
+      contrast: this.$m16y.contrast,
     };
   },
   mounted() {},
@@ -114,9 +114,9 @@ export default {
     filter: contrast(var(--contrast)) brightness(var(--brightness)) #{"grayscale(var(--grayscale))"} #{"invert(var(--invert))"};
 
     // Double invert for night mode to maintain image color
-    // img {
-    //   filter: #{"invert(var(--invert))"};
-    // }
+    img {
+      filter: #{"invert(var(--invert))"};
+    }
   }
 </style>
 <style scoped lang="scss">
