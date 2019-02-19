@@ -33,6 +33,44 @@ Default: `false`
 ### Grayscale mode
 Allow user to switch the app to grayscale color theme.
 
+## How to use
+
+### Install the plugin
+- Add the plugin to Vue using
+
+```
+import M16yPlugin from 'm16y-plugin';
+
+Vue.use(M16yPlugin);
+```
+
+- In `App.vue` simple add attribute `v-access-ctrls`
+```
+<div id="app" v-access-ctrls>
+<!--code here--/>
+</div>
+```
+
+And it will just work! 👍
+
+### Use `image-wrapper`
+
+`image-wrapper` receives the following basic props:
+
+`publicId: string` - the image unique Id using Cloudinary
+
+`width: number` - width of the image
+
+`height: number` - height of the image
+
+`alt: string`- alt text of the image
+
+`optimizedWhiteText: boolean` - whether should optimize the image brightness for using as background of white text.
+
+`optimizedBlackText: boolean` - whether should optimize the image brightness for using as background of black text.
+
+Other transformation effects which follow [Cloudinary standards](https://cloudinary.com/documentation/image_transformations)
+
 ## Technologies used
 [Vue](https://vuejs.com)
 
