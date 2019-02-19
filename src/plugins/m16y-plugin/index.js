@@ -1,5 +1,5 @@
-import AccessibilityControls from '@/plugins/m16y-plugin/AccessibilityControls/AccessibilityControls';
-import ImageWrapper from '@/plugins/m16y-plugin/AccessibilityControls/ImageWrapper';
+import AccessibilityControls from './AccessibilityControls/AccessibilityControls.vue';
+import ImageWrapper from './AccessibilityControls/ImageWrapper.vue';
 
 /* eslint-disable*/
 
@@ -28,30 +28,87 @@ const defaults = {
     },
   },
 }
+
+const registerComponents = (components) => {
+  if (components) {
+    for (var key in components) {
+      const component = components[key];
+
+      // TODO - check if the component is registered
+      if (component) {
+        Vue.component(key, component);
+        return true;
+      }
+    }
+  }
+
+  return false;
+}
+
+/**
+ * Steps to do:
+ * 1. Check if there is more than one Vue instance installed
+ * 2. Check if library installed - ✅
+ * 3. Options - what accessibility controls should be included - ✅(partial)
+ * 4. Element to attached
+ * 5. Separate CSS
+ * 6. UI?
+ * 7. Can we make imageWrapper to directive instead of component also?
+ */
 const M16yPlugin = {
   install: function install(Vue) {
+    var options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+
     if (this.installed) return;
 
     this.installed = true;
+    let data = {};
+
+    if (options.configurations) {
+
+      // TODO - customize the configuration panel of widget
+      for (var key in options.configurations) {
+        const configuration = options.configurations[key];
+
+        if (configuration) {
+          data = {
+            ...data,
+            [key]: defaults.data[key],
+          };
+        }
+
+      }
+    }
+    else {
+      data = defaults.data;
+    }
 
     const root = new Vue({
       data: {
-        ...defaults.data,
+        ...data,
       },
+      data: data,
       render: createElement => createElement(AccessibilityControls),
     });
 
-    root.$on('brightness', defaults.data.changeBrightness);
-    root.$on('contrast', defaults.data.changeContrast);
-    root.$on('grayscale', defaults.data.toogleGrayscaleMode);
-    root.$on('nightMode', defaults.data.switchNightMode);
-    root.$on('colorBlind', defaults.data.supportColorBlind);
+    root.$on('brightness', data.changeBrightness);
+    root.$on('contrast', data.changeContrast);
+    root.$on('grayscale', data.toogleGrayscaleMode);
+    root.$on('nightMode', data.switchNightMode);
+    root.$on('colorBlind', data.supportColorBlind);
 
-    Vue.component('imageWrapper', ImageWrapper);
+    // Only register external components
+    const registeredComps = registerComponents(options.components);
 
-    Vue.directive("accessCtrls", {
+    if (!registeredComps) {
+      Vue.component('imageWrapper', ImageWrapper);
+    }
+
+    const directiveName = options.directiveName || "m16yCtrls";
+
+    Vue.directive(directiveName, {
       bind(el) {
-        el.classList.add('accessibility--enabled');
+        el.classList.add(`m16y-control--enabled`);
         root.$mount(el.appendChild(document.createElement('div')));
       }
     });
@@ -60,5 +117,16 @@ const M16yPlugin = {
   },
   version: '0.0.1',
 };
+
+let GlobalVue = null;
+
+if (typeof window !== 'undefined') {
+	GlobalVue = window.Vue;
+} else if (typeof global !== 'undefined') {
+	GlobalVue = global.Vue;
+}
+if (GlobalVue) {
+	GlobalVue.use(M16yPlugin);
+}
 
 export default M16yPlugin;

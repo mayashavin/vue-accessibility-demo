@@ -1,35 +1,35 @@
 {
-  "name": "m16y-vue-accessibility",
+  "name": "vue-accessibility-widget",
   "version": "0.0.1",
-  "private": true,
-  "description": "Accessibility plugin",
+  "description": "M16y - Media Accessibility plugin",
   "author": "Maya Shavin <maya@cloudinary.com>",
   "scripts": {
-    "build": "node build/build.js",
-    "test": "npm run unit && npm run e2e",
-    "e2e": "node test/e2e/runner.js",
-    "lint": "eslint --ext .js,.vue src test/unit/specs test/e2e/specs",
-    "dev": "node build/dev-server.js",
-    "start": "node build/dev-server.js",
-    "unit": "cross-env BABEL_ENV=test karma start test/unit/karma.conf.js --single-run"
+    "build": "rimraf ./dist && webpack --config ./build/webpack.plugin.conf.js"
   },
+  "main": "dist/plugins/vue-m16y-plugin.js",
+  "license": "MIT",
   "dependencies": {
     "material-design-icons-iconfont": "^3.0.3",
     "roboto-fontface": "*",
-    "vue": "^2.5.2",
-    "vue-accessibility-widget": "^0.0.1",
-    "vue-router": "^3.0.1",
-    "vuetify": "^1.3.0"
+    "terser-webpack-plugin": "^1.2.2",
+    "vue": "^2.5.2"
   },
   "devDependencies": {
+    "@babel/core": "^7.3.3",
+    "@babel/plugin-proposal-object-rest-spread": "^7.3.2",
+    "@babel/plugin-syntax-object-rest-spread": "^7.2.0",
+    "@babel/plugin-transform-runtime": "^7.2.0",
+    "@babel/preset-env": "^7.3.1",
+    "@babel/preset-es2015": "^7.0.0-beta.53",
+    "@babel/preset-stage-2": "^7.0.0",
     "autoprefixer": "^7.1.5",
-    "babel-core": "^6.26.0",
+    "babel-core": "7.0.0-bridge.0",
     "babel-eslint": "^8.0.1",
-    "babel-loader": "^7.1.2",
+    "babel-loader": "^7.1.5",
     "babel-plugin-istanbul": "^4.1.5",
     "babel-plugin-transform-runtime": "^6.23.0",
-    "babel-preset-env": "^1.6.0",
     "babel-register": "^6.26.0",
+    "babel-runtime": "^6.9.2",
     "chai": "^4.1.2",
     "chalk": "^2.1.0",
     "chromedriver": "^2.33.1",
@@ -71,7 +71,7 @@
     "optimize-css-assets-webpack-plugin": "^3.2.0",
     "ora": "^1.3.0",
     "phantomjs-prebuilt": "^2.1.15",
-    "rimraf": "^2.6.2",
+    "rimraf": "^2.6.3",
     "sass-loader": "^7.1.0",
     "selenium-server": "^3.6.0",
     "semver": "^5.4.1",
@@ -83,12 +83,15 @@
     "sw-precache-webpack-plugin": "^0.11.4",
     "uglify-es": "^3.1.3",
     "url-loader": "^0.6.2",
+    "vue": "^2.2.1",
     "vue-cli-plugin-vuetify": "^0.4.6",
-    "vue-loader": "^13.3.0",
+    "vue-html-loader": "^1.2.3",
+    "vue-loader": "14.2.2",
     "vue-style-loader": "^3.0.3",
     "vue-template-compiler": "^2.5.2",
-    "webpack": "^3.7.1",
+    "webpack": "4.29.2",
     "webpack-bundle-analyzer": "^2.9.0",
+    "webpack-cli": "^3.2.3",
     "webpack-dev-middleware": "^1.12.0",
     "webpack-hot-middleware": "^2.19.1",
     "webpack-merge": "^4.1.0"
@@ -101,5 +104,24 @@
   "engines": {
     "node": ">= 4.0.0",
     "npm": ">= 3.0.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mayashavin/vue-accessibility-demo.git"
+  },
+  "keywords": [
+    "a11y",
+    "m16y",
+    "accessibility",
+    "plugin",
+    "vue",
+    "widget",
+    "media",
+    "accessibility",
+    "vueJS"
+  ],
+  "bugs": {
+    "url": "https://github.com/mayashavin/vue-accessibility-demo/issues"
+  },
+  "homepage": "https://github.com/mayashavin/vue-accessibility-demo#readme"
 }

@@ -110,7 +110,7 @@ export default {
     --fontSize: 100%;
   }
 
-  .accessibility--enabled {
+  .m16y-control--enabled {
     filter: contrast(var(--contrast)) brightness(var(--brightness)) #{"grayscale(var(--grayscale))"} #{"invert(var(--invert))"};
 
     // Double invert for night mode to maintain image color

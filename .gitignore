@@ -1,6 +1,6 @@
 .DS_Store
 node_modules/
-/dist/
+**/dist/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
@@ -9,8 +9,9 @@ yarn-error.log*
 selenium-debug.log
 package-lock.json
 yarn-lock.json
+yarn.lock
 
-*/node_modules/
+**/node_modules/
 cloudinary_vue/
 
 # Editor directories and files

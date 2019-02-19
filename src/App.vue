@@ -1,5 +1,5 @@
 <template>
-  <v-app v-access-ctrls>
+  <v-app v-m16y-ctrls>
     <div ref="app" id="app-1">
       <header class="white"></header>
       <main>
