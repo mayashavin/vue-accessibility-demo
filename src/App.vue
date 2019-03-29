@@ -11,12 +11,12 @@
               class="align-self-center banner--img"
               :src="banner.src"
             /> -->
-            <image-wrapper 
+            <image-wrapper
               class="section-banner"
               :img="banner"
               optimizedWhiteText
               />
-            <h1 
+            <h1
               class="banner--title"
               v-text="title"
               ref="sectionTitle"></h1>
@@ -31,18 +31,21 @@
               <!-- @error="getImagePlaceholder"/> -->
               <!-- alt="articleThumbnail.alt" -->
             <!-- new way -->
-            <image-wrapper :img="articleThumbnail" class="align-self-center" v-if="articleThumbnail"/>
+            <image-wrapper
+              :img="articleThumbnail"
+              class="align-self-center"
+              v-if="articleThumbnail"/>
             <div class="flex text-sm-justify">
               <h2 class="deep-orange--text text--darken-4" v-text="title"/>
               <h3 class="subtitle" v-text="articleSubtitle"/>
-              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
-                when an unknown printer took a galley of type and scrambled 
-                it to make a type specimen book. It has survived not only five centuries, 
-                but also the leap into electronic typesetting, remaining essentially unchanged. 
-                It was popularised in the 1960s with the release of Letraset sheets containing 
-                Lorem Ipsum passages, and more recently with desktop publishing software 
-                like Aldus PageMaker including versions of Lorem Ipsum.</p>
+              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                 Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                 when an unknown printer took a galley of type and scrambled
+                 it to make a type specimen book. It has survived not only five centuries,
+                 but also the leap into electronic typesetting, remaining essentially unchanged.
+                 It was popularised in the 1960s with the release of Letraset sheets containing
+                 Lorem Ipsum passages, and more recently with desktop publishing software
+                 like Aldus PageMaker including versions of Lorem Ipsum.</p>
               <v-btn dark>
                 More
                 <v-icon right>more_horiz</v-icon>
@@ -125,7 +128,7 @@ main {
   .m-access-ctrls-btn__content {
     line-height: inherit;
   }
-  
+
   .material-icons {
     max-width:25px;
   }
