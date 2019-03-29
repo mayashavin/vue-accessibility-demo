@@ -1,6 +1,8 @@
 # vue-accessibility-demo
 Demo for Vue plugin for m16y - media accessibility for visually impaired user support.
 
+Demo: [https://vue-accessibility-demo.netlify.com/](https://vue-accessibility-demo.netlify.com/)
+
 It will inject a small widget with basic settings to for helping visually impaired user, including:
 1. Low visions (contrast sensitivy, brightness sensitivity, etc)
 2. Color blindness (texture support)
